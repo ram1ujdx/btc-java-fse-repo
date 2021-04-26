@@ -29,6 +29,92 @@ DCL - grant, revoke
 
 ### Day 3 - Core Java - Overview, First Java Program, Variables, Datatypes, Literals, Operators, Expressions and Conditional Statements
 
+```text
+
+Java - Object Oriented Programming Language
+WORA Write Once Run Anywhere
+
+JKD - Java Compiler + JRE
+JRE - Runtime + JVM
+
+Java Compiler -> Byte Code -> Java Interpreter -> Output
+
+Basics of Java
+
+1. Keywords
+2. Identifiers
+3. Variables
+4. Literals
+5. Operators
+
+
+x=5 y=10
+sum=x+y
+
+
+data-type variable-name;
+
+int num,sum;
+num=10;
+double pi=3.14;
+
+int - 5,10 - 4 Bytes
+short - -32768 32767
+long - 8 Bytes
+byte - 1 Byte
+
+float - 4 Bytes - eg. 2.5F, 3.77F
+double - 8 Bytes - eg 2.568745465
+
+boolean - true/false
+char - 1byte - 'a','$','5'
+
+String - "Hello" 5!='5'!="5"
+
++,-,*,/,%
+
+++,--
+
+assignment =, +=, -+,*=, /=, %=
+comparison >,>=,<,<=,==,!=
+logical - && || !
+bitwise - & | ~
+
+
+
+
+Branching - 
+
+if-else
+switch
+conditional operator
+
+
+Syntax - 
+	if(condition){
+		statement;
+		....
+	}
+	else{
+		statements;
+	}
+
+
+Check a number is even or odd-
+	
+	num=10;
+	if(num%2==0){
+		SOP("Even");
+	}
+	else{
+		SOP("Odd");
+	}
+
+Find the largest among 3 nos-
+	x=10,y=5,z=20
+
+```
+
 ### Day 4 - Core Java - String, Arrays, Looping Statements, Methods, Class, Object, static
 
 ### Day 5 - Core Java - Access Modifiers, Packages, Inheritance, Abstraction
