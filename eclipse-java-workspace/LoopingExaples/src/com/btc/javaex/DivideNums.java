@@ -8,9 +8,8 @@ public class DivideNums {
 		Scanner scanner=new Scanner(System.in);
 		float num1,num2;
 		double result;
-		System.out.println("Enter two numbers: " );
-		num1=scanner.nextFloat();
-		num2=scanner.nextFloat();
+		num1=Float.parseFloat(args[0]);
+		num2=Float.parseFloat(args[1]);
  
 		result=num1/num2;
 		System.out.println("Result -> "+result);
