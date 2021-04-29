@@ -117,6 +117,20 @@ Find the largest among 3 nos-
 
 ### Day 4 - Core Java - String, Arrays, Looping Statements, Methods, Class, Object, static
 
+#### Naming Standard -
+
+* Class Naming Rules
+	- Must start with Uppercase
+* Naming methods/fields
+	- Should start with a lowercase and follow camelcasing
+	- eg personName, sayHello(), showPersonDetails()
+* Package naming 
+	- should contain only lowercase
+* Final fields
+	- should contain UPPERCASE
+
+
+
 ### Day 5 - Core Java - Access Modifiers, Packages, Inheritance, Abstraction
 
 ### Day 6 - Core Java - Polymorphism, Encapsulation, Interface, Object Methods
