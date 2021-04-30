@@ -2,6 +2,11 @@ package com.btc.javax;
 
 public class Parent {
 
+	public Parent(String name) {
+		this.name=name;
+		System.out.println("Parent Constructor Created");
+	}
+	
 	protected String name;
 	
 	public void setName(String name) {
@@ -9,7 +14,7 @@ public class Parent {
 	}
 
 	public void showName() {
-		System.out.println("Name = "+name);
+		System.out.println("Parent Name = "+name);
 	}
 	
 	
