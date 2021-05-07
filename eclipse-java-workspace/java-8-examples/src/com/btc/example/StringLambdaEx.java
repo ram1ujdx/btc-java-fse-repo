@@ -5,11 +5,24 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+class MethodRef{
+	 String capitalize(String str) {
+		return str.toUpperCase();
+	}
+}
+
+
+
 public class StringLambdaEx {
 
 	public static void main(String[] args) {
 		
 		List<String> names=Arrays.asList("Tushar","Ramesh","Javed","Lokesh","Arnav","Jack");
+		
+		names.stream().map(new MethodRef()::capitalize).forEach(System.out::println);
+		
+		System.out.println(names);
+		
 		
 //		Consumer<String> consumer=new Consumer<String>() {
 //			@Override
