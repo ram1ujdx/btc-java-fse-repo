@@ -1,0 +1,13 @@
+header{
+    min-height: 200px;
+    background-color: cadetblue;
+}
+
+main{
+    min-height: 500px;
+}
+
+footer{
+    min-height: 200px;
+    background-color: dimgray;
+}
