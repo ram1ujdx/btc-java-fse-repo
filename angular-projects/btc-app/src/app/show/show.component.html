@@ -1,1 +1,44 @@
-<p>show works!</p>
+<h2>Person Information</h2>
+<div>
+    <input type="text" name="firstName" id="firstName" placeholder="First Name"  class="form-control"
+        [(ngModel)]="person.firstName">
+    <p>{{person.firstName}}</p>
+</div>
+<div>
+    <input type="text" name="lastName" id="lastName" placeholder="Last Name"  class="form-control"
+        [(ngModel)]="person.lastName">
+    <p>{{person.lastName}}</p>
+</div>
+
+<div>
+    <input type="email" name="email" id="email" placeholder="Email"  class="form-control"
+        [(ngModel)]="person.email">
+    <p>{{person.email}}</p>
+</div>
+
+<div>
+    <input type="text" name="age" id="age" placeholder="Age"  class="form-control"
+        [(ngModel)]="person.age">
+    <p>{{person.age}}</p>
+</div>
+
+<button [disabled]="isDisabled" class="btn btn-primary" (click)="showInfo()">{{btnTxt}}</button>
+
+<table class="table" *ngIf="person.age && person.firstName && person.lastName && person.email">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{person.firstName}} {{person.lastName}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.age}}</td>
+        </tr>
+    </tbody>
+
+</table>
