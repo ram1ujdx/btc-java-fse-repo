@@ -1,0 +1,27 @@
+.mid-age{
+
+    background-color: yellow;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+
+}
+
+.young{
+
+    background-color: green;
+    color: mintcream;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+.old{
+
+    background-color:red;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+
+}

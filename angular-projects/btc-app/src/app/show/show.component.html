@@ -22,9 +22,9 @@
     <p>{{person.age}}</p>
 </div>
 
-<button [disabled]="isDisabled" class="btn btn-primary" (click)="showInfo()">{{btnTxt}}</button>
+<button [disabled]="isDisabled" class="btn btn-primary" (click)="addPerson(person.firstName,person.lastName,person.email,person.age)">{{btnTxt}}</button>
 
-<table class="table" *ngIf="person.age && person.firstName && person.lastName && person.email">
+<table class="table" *ngIf="personList.length>0">
 
     <thead>
         <tr>
@@ -34,11 +34,24 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{person.firstName}} {{person.lastName}}</td>
-            <td>{{person.email}}</td>
-            <td>{{person.age}}</td>
+        <!-- <tr [ngStyle]="{'background-color':getBackgroundColor(person.age)}"> -->
+        <tr  *ngFor="let p of personList" [ngClass]="getStyleClass(p.age)">
+            <td>{{p.firstName}} {{p.lastName}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.age}}</td>
         </tr>
     </tbody>
 
 </table>
+
+<div [ngSwitch]="date.getDay()">
+
+    <div *ngSwitchCase="1">Monday</div>
+    <div *ngSwitchCase="2">Tuesday</div>
+    <div *ngSwitchCase="3">Wednesday</div>
+    <div *ngSwitchCase="4">Thursday</div>
+    <div *ngSwitchCase="5">Friday</div>
+    <div *ngSwitchCase="6">Saturday</div>
+    <div *ngSwitchCase="7">Sunday</div>
+
+</div>
