@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonDataService } from '../person-data.service';
 import { Person } from '../show/Person';
 
 @Component({
@@ -10,7 +11,7 @@ export class AddPersonComponent implements OnInit {
 
   person:Person=new Person();
   personList: Array<Person>=[];
-  constructor() { }
+  constructor(private personData:PersonDataService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,10 @@ export class AddPersonComponent implements OnInit {
   addPerson(person:Person){
 
     console.log(person);
+    this.personData.personList.push(person);
+    alert("Person Details Added..");
   }
+
+
 
 }

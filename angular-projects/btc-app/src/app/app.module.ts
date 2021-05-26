@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 import { AddPersonComponent } from './add-person/add-person.component';
+import { ShowPersonComponent } from './show-person/show-person.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddPersonComponent } from './add-person/add-person.component';
     FooterComponent,
     NavComponent,
     MainComponent,
-    AddPersonComponent
+    AddPersonComponent,
+    ShowPersonComponent
   ],
   imports: [
     BrowserModule,
