@@ -1,0 +1,78 @@
+<h2>Person Information</h2>
+
+<form [formGroup]="personForm">
+
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" name="firstName" id="firstName"class="form-control" required minlength="3"
+        [class.is-invalid]=""
+        
+        >
+        <div *ngIf="firstName!=null && firstName.touched">
+        <small *ngIf="firstName.errors?.required" class="text-danger">** First Name is Required</small>
+        <small *ngIf="firstName.errors?.minlength" class="text-danger">** First Name should have a minimum of 3 characters </small>
+        <small *ngIf="firstName.errors?.forbiddenName" class="text-danger">** This name is not allowed </small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" class="form-control" required
+        [class.is-invalid]=""
+        formControlName="lastName"
+        >
+        <small *ngIf="" class="text-danger">** Last Name is Required</small>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" 
+        [class.is-invalid]=""
+        formControlName="email"
+        >
+        <small *ngIf="" class="text-danger">** Email is Required</small>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" class="form-control" 
+        [class.is-invalid]=""
+        formControlName="age"
+        >
+        <small *ngIf="" class="text-danger">** Age is Required</small>
+    </div>
+    <div formGroupName="addressForm">
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" class="form-control" 
+            [class.is-invalid]=""
+            formControlName="city"
+            >
+            <small *ngIf="" class="text-danger">** Age is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" class="form-control" 
+            [class.is-invalid]=""
+            formControlName="age"
+            >
+            <small *ngIf="" class="text-danger">** Age is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" class="form-control" 
+            [class.is-invalid]=""
+            formControlName="age"
+            >
+            <small *ngIf="" class="text-danger">** Age is Required</small>
+        </div>
+
+    </div>
+
+<button type="submit" class="btn btn-dark">Add Person</button>
+
+</form>
+{{personForm.value|json}}
