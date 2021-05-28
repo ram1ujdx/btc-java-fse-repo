@@ -12,6 +12,9 @@ import { MainComponent } from './main/main.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { ShowPersonComponent } from './show-person/show-person.component';
 import { PersonReactiveComponent } from './person-reactive/person-reactive.component';
+import { EmailShortnerPipe } from './email-shortner.pipe';
+import { ShowPersonDetailsComponent } from './show-person-details/show-person-details.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PersonReactiveComponent } from './person-reactive/person-reactive.compo
     MainComponent,
     AddPersonComponent,
     ShowPersonComponent,
-    PersonReactiveComponent
+    PersonReactiveComponent,
+    EmailShortnerPipe,
+    ShowPersonDetailsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

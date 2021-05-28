@@ -3,5 +3,6 @@ export class Person{
     lastName:string='';
     email:string='';
     age:number=0;
+    salary:number=0.0;
 
 }

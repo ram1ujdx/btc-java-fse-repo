@@ -1,0 +1,29 @@
+li{
+    display: inline-flex;
+}
+ul{
+    list-style-type: none;
+}
+
+a:link{
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:visited{
+    color: sandybrown;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active{
+    color: tomato;
+    background-color: transparent;
+    text-decoration: none;
+}

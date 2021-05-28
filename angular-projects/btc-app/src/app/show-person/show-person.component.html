@@ -5,17 +5,25 @@
             <th>Name</th>
             <th>Email</th>
             <th>Age</th>
+            <th>Salary</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <!-- <tr [ngStyle]="{'background-color':getBackgroundColor(person.age)}"> -->
         <tr  *ngFor="let p of personData.personList, let i=index">
-            <td>{{p.firstName}} {{p.lastName}}</td>
-            <td>{{p.email}}</td>
+            <td>
+                <a routerLink='/show-person/{{i}}'>
+                {{p.firstName|uppercase}} {{p.lastName|uppercase}}
+                </a>
+            </td>
+            <td>{{p.email|emailShortner:5}}</td>
             <td>{{p.age}}</td>
+            <td>{{p.salary|currency:'INR'}}</td>
             <td><button class="btn btn-danger" (click)="deletePerson(i)">Delete</button></td>
         </tr>
     </tbody>
+
+
 
 </table>

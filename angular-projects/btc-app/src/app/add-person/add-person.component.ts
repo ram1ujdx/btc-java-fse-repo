@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PersonDataService } from '../person-data.service';
 import { Person } from '../show/Person';
 
@@ -11,7 +12,7 @@ export class AddPersonComponent implements OnInit {
 
   person:Person=new Person();
   personList: Array<Person>=[];
-  constructor(private personData:PersonDataService) { }
+  constructor(private personData:PersonDataService, private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,8 @@ export class AddPersonComponent implements OnInit {
     console.log(person);
     this.personData.personList.push(person);
     alert("Person Details Added..");
+    this._router.navigate(['/show-person']);
+
   }
 
 
