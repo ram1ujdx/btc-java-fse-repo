@@ -1,0 +1,12 @@
+<h2>Covid Information App</h2>
+Enter Country Name
+<input type="text" name="country" id="country" #countryName>
+
+<button (click)="getCountryStatus(countryName.value)">Get Status</button>
+
+<div *ngIf="countryStats">
+<p>Confirmed : {{countryStats.confirmed.value}}</p>
+<p>Recovered : {{countryStats.recovered.value}}</p>
+<p>Deaths : {{countryStats.deaths.value}}</p>
+<p>Updated On : {{countryStats.lastUpdate}}</p>
+</div>
