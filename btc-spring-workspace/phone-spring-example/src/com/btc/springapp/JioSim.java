@@ -1,5 +1,8 @@
 package com.btc.springapp;
 
+import org.springframework.stereotype.Component;
+
+@Component("jio")
 public class JioSim implements Sim{
 	
 	

@@ -1,5 +1,8 @@
 package com.btc.springapp;
 
+import org.springframework.stereotype.Component;
+
+@Component("airtel")
 public class AirtelSim implements Sim {
 	
 	

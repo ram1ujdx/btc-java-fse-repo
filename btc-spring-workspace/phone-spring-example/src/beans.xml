@@ -12,8 +12,32 @@
 <constructor-arg name="value" value="Blah"></constructor-arg>
 </bean>
 
-<bean id="phone" class="com.btc.springapp.Phone">
+<bean id="phone1" class="com.btc.springapp.Phone">
 <property name="sim" ref="viSim"/>
+<property name="brand" value="Samsung"/>
+<property name="ram" value="8"/>
+<property name="networks">
+<list>
+<value>5G</value>
+<value>4G LTE</value>
+<value>HSPA</value>
+<value>GSM</value>
+</list>
+</property>
+</bean>
+
+
+<bean id="phone2" class="com.btc.springapp.Phone">
+<constructor-arg name="brand" value="Apple"/>
+<constructor-arg name="ram" value="4"/>
+<property name="sim" ref="jioSim"/>
+<property name="networks">
+<list>
+<value>4G LTE</value>
+<value>HSPA</value>
+<value>GSM</value>
+</list>
+</property>
 </bean>
 
 </beans>

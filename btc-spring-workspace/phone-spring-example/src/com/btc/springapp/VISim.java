@@ -1,8 +1,14 @@
 package com.btc.springapp;
 
+import org.springframework.stereotype.Component;
+
+@Component("vi")
 public class VISim implements Sim{
 	
 	public VISim(String value) {
+		// TODO Auto-generated constructor stub
+	}
+	public VISim() {
 		// TODO Auto-generated constructor stub
 	}
 
