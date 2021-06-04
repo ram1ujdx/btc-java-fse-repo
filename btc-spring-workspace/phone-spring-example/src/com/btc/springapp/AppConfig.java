@@ -23,12 +23,12 @@ public class AppConfig {
 //		return samsung;
 //	}
 //	
-	@Bean("apple")
-	public Phone getIPhone() {
-		Phone apple=new Phone("Apple",4);
-		
-		apple.setNetworks(Arrays.asList("4G LTE","HSPA","GSM"));
-		return apple;
-	}
+//	@Bean("apple")
+//	public Phone getIPhone() {
+//		Phone apple=new Phone("Apple",4);
+//		
+//		apple.setNetworks(Arrays.asList("4G LTE","HSPA","GSM"));
+//		return apple;
+//	}
 
 }

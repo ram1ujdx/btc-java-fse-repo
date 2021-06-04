@@ -2,12 +2,16 @@ package com.btc.springapp;
 
 import java.util.List;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 @Component("samsung")
-public class Phone {
+@Scope("prototype")
+public class Phone implements InitializingBean, DisposableBean {
 
 	@Autowired
 	@Qualifier("vi")
@@ -20,8 +24,18 @@ public class Phone {
 	@Value("${networks}")
 	private List<String> networks;
 	
-	public Phone() {
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Initialization Completed");
 		
+	}
+	public Phone() {
+		System.out.println("Phone Bean Created");
+	}
+	
+
+	public void preInit() {
+		System.out.println("Initialization Completed");
 	}
 	
 	public Phone(String brand, int ram) {
@@ -68,6 +82,10 @@ public class Phone {
 		return "Phone [ brand=" + brand + ", ram=" + ram + ", networks=" + networks + "]";
 	}
 	
-	
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

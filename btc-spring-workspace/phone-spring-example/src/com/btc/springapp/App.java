@@ -12,8 +12,19 @@ public class App {
 		ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
 		Phone phone=context.getBean("samsung",Phone.class);
 		phone.makeACall();
+		phone.setRam(12);
 		System.out.println("Sim -> "+phone.getSimInfo());
 		System.out.println(phone);
+		
+		System.out.println("\nReading Bean One More Time\n");
+		
+		Phone phone2=context.getBean("samsung",Phone.class);
+		phone2.makeACall();
+		System.out.println("Sim -> "+phone2.getSimInfo());
+		System.out.println(phone2);
+		
+		
+		
 		
 //		System.out.println("\n...................................\n");
 //		

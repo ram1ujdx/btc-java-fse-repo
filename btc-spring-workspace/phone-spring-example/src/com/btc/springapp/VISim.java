@@ -1,15 +1,17 @@
 package com.btc.springapp;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("vi")
+@Scope("prototype")
 public class VISim implements Sim{
 	
 	public VISim(String value) {
 		// TODO Auto-generated constructor stub
 	}
 	public VISim() {
-		// TODO Auto-generated constructor stub
+		System.out.println("VI Sim Created");
 	}
 
 	public void call() {
