@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.btc.springboot.example.exception.PersonAlreadyExistsException;
 import com.btc.springboot.example.model.Person;
 import com.btc.springboot.example.repository.PersonRepo;
 
@@ -19,7 +20,9 @@ public class PersonServiceImpl implements PersonService {
 	
 	@Override
 	public Person addPerson(Person person) {
-		
+		if(repo.existsByEmail(person.getEmail())) {
+			throw new PersonAlreadyExistsException("Person with email ["+person.getEmail()+"] already exists");
+		}
 		return repo.save(person);
 	}
 
