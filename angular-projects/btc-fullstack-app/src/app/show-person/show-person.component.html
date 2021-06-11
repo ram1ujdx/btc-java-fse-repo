@@ -1,0 +1,29 @@
+<table class="table" *ngIf="personList">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr [ngStyle]="{'background-color':getBackgroundColor(person.age)}"> -->
+        <tr  *ngFor="let p of personList">
+            <td>{{p.id}}</td>
+            <td>
+                <a routerLink='/show-person/{{p.personName}}'>
+                {{p.personName}}
+                </a>
+            </td>
+            <td>{{p.email}}</td>
+            <td>{{p.birthDate}}</td>
+            <td><button class="btn btn-danger" (click)="deletePerson(p.id)">Delete</button></td>
+        </tr>
+    </tbody>
+
+
+
+</table>
