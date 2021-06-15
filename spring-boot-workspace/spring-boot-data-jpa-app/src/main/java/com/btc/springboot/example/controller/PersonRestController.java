@@ -34,17 +34,17 @@ public class PersonRestController {
 	@Autowired
 	PersonService service;
 	
-	@GetMapping("/persons/person-name/{personName}")
+	@GetMapping("/admin/persons/person-name/{personName}")
 	public Person getPersonByName(@PathVariable("personName") String personName) {
 		return service.getPersonByName(personName);
 	}
 	
-	@GetMapping("/persons")
+	@GetMapping("/users/persons")
 	public List<Person> getAllPersons(){
 		return service.getAllPersons();
 	}
 	
-	@PostMapping("/persons")
+	@PostMapping("/admin/persons")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Person addPerson(@RequestBody Person person, HttpServletRequest request) {
 		
@@ -55,7 +55,7 @@ public class PersonRestController {
 	}
 	
 
-	@PutMapping("/persons")
+	@PutMapping("/admin/persons")
 	public Person updatePerson(@RequestBody Person person) {
 		
 		Person updatedPerson = service.updatePerson(person);
@@ -64,9 +64,14 @@ public class PersonRestController {
 	}
 	
 	
-	@DeleteMapping("/persons/id/{id}")
+	@DeleteMapping("/admin/persons/id/{id}")
 	public boolean deletePersonById(@PathVariable("id") long id) {
 		return service.deletePersonById(id);
+	}
+	
+	@GetMapping("/public/hello")
+	public String sayHello() {
+		return "Hello Coders";
 	}
 	
 	
