@@ -27,14 +27,14 @@ import com.btc.springboot.example.service.PersonService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class PersonRestController {
 
 	
 	@Autowired
 	PersonService service;
 	
-	@GetMapping("/admin/persons/person-name/{personName}")
+	@GetMapping("/users/persons/person-name/{personName}")
 	public Person getPersonByName(@PathVariable("personName") String personName) {
 		return service.getPersonByName(personName);
 	}
@@ -44,7 +44,7 @@ public class PersonRestController {
 		return service.getAllPersons();
 	}
 	
-	@PostMapping("/admin/persons")
+	@PostMapping("/users/persons")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Person addPerson(@RequestBody Person person, HttpServletRequest request) {
 		
@@ -55,7 +55,7 @@ public class PersonRestController {
 	}
 	
 
-	@PutMapping("/admin/persons")
+	@PutMapping("/users/persons")
 	public Person updatePerson(@RequestBody Person person) {
 		
 		Person updatedPerson = service.updatePerson(person);
@@ -64,7 +64,7 @@ public class PersonRestController {
 	}
 	
 	
-	@DeleteMapping("/admin/persons/id/{id}")
+	@DeleteMapping("/users/persons/id/{id}")
 	public boolean deletePersonById(@PathVariable("id") long id) {
 		return service.deletePersonById(id);
 	}

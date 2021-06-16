@@ -1,6 +1,10 @@
 package com.btc.springboot.example.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,5 +25,6 @@ public class AppUserDetailsService implements UserDetailsService {
 		User user=repo.findByUsername(username);
 		return new AuthUserDetails(user);
 	}
-
+	
+	
 }
