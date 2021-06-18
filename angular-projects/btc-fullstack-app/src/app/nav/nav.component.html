@@ -2,3 +2,8 @@
     <li><a routerLink="add-person">Add Person</a></li> | 
     <li><a routerLink="show-person">View All</a></li>
 </ul>
+<div *ngIf="_authService.isLoggedIn">
+
+    <p>Signed-In as <b>{{_authService.loggedInUser}}</b> </p>
+    <button class="btn btn-link" (click)="logout()">Logout</button>
+</div>
