@@ -16,4 +16,5 @@ public class Coupon {
 	private LocalDate validTill;
 	private double minimumOrderAmt;
 	private double maxDiscount;
+	private int serverPort;
 }

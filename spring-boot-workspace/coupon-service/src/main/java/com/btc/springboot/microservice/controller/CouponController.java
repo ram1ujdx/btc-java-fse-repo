@@ -1,6 +1,7 @@
 package com.btc.springboot.microservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +17,16 @@ public class CouponController {
 	@Autowired
 	private CouponRepo repo;
 	
+	@Autowired
+	Environment env;
+	
 	@GetMapping("/coupon-code/{couponCode}")
 	public Coupon getCoupon(@PathVariable String couponCode) {
-		return repo.getCoupon(couponCode);
+		Coupon coupon= repo.getCoupon(couponCode);
+		int x=5/0;
+		int port=Integer.parseInt(env.getProperty("local.server.port"));
+		coupon.setServerPort(port);
+		return coupon;
 	}
 
 }
