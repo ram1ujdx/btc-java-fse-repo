@@ -23,7 +23,6 @@ public class CouponController {
 	@GetMapping("/coupon-code/{couponCode}")
 	public Coupon getCoupon(@PathVariable String couponCode) {
 		Coupon coupon= repo.getCoupon(couponCode);
-		int x=5/0;
 		int port=Integer.parseInt(env.getProperty("local.server.port"));
 		coupon.setServerPort(port);
 		return coupon;
