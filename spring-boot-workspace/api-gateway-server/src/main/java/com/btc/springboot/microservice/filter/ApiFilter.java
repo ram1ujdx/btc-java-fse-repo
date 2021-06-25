@@ -32,14 +32,14 @@ public class ApiFilter extends ZuulFilter {
 	public Object run() throws ZuulException {
 		log.info("Request Intercepted");
 		
-		if(LocalDateTime.now().isBefore(LocalDateTime.of(LocalDate.now(),LocalTime.of(21, 5)))){
-			log.info("Succes.. You are Welcome");
-			return null;
-		}
-		RequestContext context=RequestContext.getCurrentContext();
-		context.setSendZuulResponse(false);
-		context.setResponseStatusCode(HttpStatus.SC_NOT_ACCEPTABLE);
-		log.error("Sorry Store is Closed");
+//		if(LocalDateTime.now().isBefore(LocalDateTime.of(LocalDate.now(),LocalTime.of(21, 5)))){
+//			log.info("Succes.. You are Welcome");
+//			return null;
+//		}
+//		RequestContext context=RequestContext.getCurrentContext();
+//		context.setSendZuulResponse(false);
+//		context.setResponseStatusCode(HttpStatus.SC_NOT_ACCEPTABLE);
+//		log.error("Sorry Store is Closed");
 		return null;
 	}
 

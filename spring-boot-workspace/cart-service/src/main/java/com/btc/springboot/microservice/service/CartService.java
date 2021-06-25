@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.btc.springboot.microservice.model.CartDetails;
@@ -60,6 +62,11 @@ public class CartService {
 		Product product =new Product(productId, "Blah Blah", 1000, 0);
 		Coupon coupon=new Coupon(couponCode,5, LocalDate.now(), 1000, 100, 0);
 		return new CartDetails(product, coupon, false, 1000);
+	}
+	
+	
+	public Coupon addCoupon(Coupon coupon) {
+		return rTemplate.postForObject("http://COUPON-SERVICE/coupons", coupon, Coupon.class);
 	}
 
 }
